@@ -1,40 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-       html, body {
-        height: 90%;
-        width: 90%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.7831, lng: -73.9712},
-          zoom: 20,
-          mapTypeId:
-          google.maps.MapTypeId.SATELLITE,
-          heading: 90,
-          tilt: 45,
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW_M0vKKHQ_i7dWF4m2JksvYahDA7_Q0Q&callback=initMap"
-    async defer></script>
-  </body>
+<head>
+<meta>
+<title>OMDB Project</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h2>OMDB</h2>
+  </header>
+<main> 
+
+<h3>Search for Movies</h3>
+
+<h3>By Title</h3>
+<form name="titleform">
+  <p>Title:
+  <input id="movieTitle" type="text"></p>
+  <p>Year:
+  <input id="movieYear" type="text"></p>
+  <p>Plot:
+  <select id="moviePlot">
+    <option value="short" selected>Short</option>
+    <option value="full">Full</option>
+  </select></p>
+  <p>Response:
+  <select id="movieResp">
+    <option value="json" selected>JSON</option>
+    <option value="xml">XML</option>
+  </select></p>
+</form>
+<p><button id="searchTitle">Search</button></p>
+
+<h3>By ID</h3>
+<form name="idform">
+  <p>ID:
+  <input id="movieID" type="text"></p>
+  <p>Plot:
+  <select id="idPlot">
+    <option value="idShort" selected>Short</option>
+    <option value="idFull">Full</option>
+  </select></p>
+  <p>Response:
+  <select id="idResp">
+    <option value="idJson" selected>JSON</option>
+    <option value="idXml">XML</option>
+  </select></p>
+</form>
+<p><button id="searchID">Search</button></p>
+</main>
+
+<script src="main.js"></script>
+</body>
 </html>
